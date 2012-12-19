@@ -1,0 +1,15 @@
+USAGE
+=====
+
+SOAP client library for nodejs.
+
+Example:
+    var soapclient = require("soapclient"),
+        method = "sayHello",
+        request = new soapclient.SOAPClientRequest(method),
+        // built by xmlbuilder, <hello><world></world></hello>
+        helloEl = request.addRootElement("hello").ele("world");
+
+    soapclient.SOAPClient.invoke(url, request, function(result) { // callback function
+        console.log(result);
+        });
